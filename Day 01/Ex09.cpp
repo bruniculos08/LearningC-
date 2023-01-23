@@ -62,3 +62,6 @@ int main(){
 
     return 0;
 }
+
+// Obs.: para templates as keywords typename e class são equivalentes... 
+// ... segundo: https://stackoverflow.com/questions/2023977/difference-of-keywords-typename-and-class-in-templates
