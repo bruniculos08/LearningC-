@@ -19,7 +19,9 @@ template <class T, class B>
 class Pair{
     T x, y;
     public:
-        void pair_func(T a, T b){ x = a; y = b; };
+        // Este método é o método construtor da classe, logo ele é usado na declaração do objeto, ou seja, ...
+        // ... a declaração do objeto irá receber os argumentos a e b de tipo ou classe genéricos.
+        Pair(T a, T b){ x = a; y = b; };
         T getMax();
 };
 // (1) Note portanto que a classe Pair usa uma classe genérica T e outra classe genérica B (esta última não é usada...
@@ -53,6 +55,10 @@ int main(){
     j = getMin(x, y);
 
     std::cout << "i = " << i << ", j = " << j << std::endl;
+
+    Pair<int, float> theMax(1, 2);
+    // Note aqui o uso do método construtor com argumentos na declaração do objeto theMax.
+    std::cout << theMax.getMax() << std::endl;
 
     return 0;
 }
