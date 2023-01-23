@@ -1,17 +1,22 @@
 // Vetores (classe)
 #include <iostream>
 #include <vector>
+#include <time.h>
 
 using namespace std;
 
 int main(){
 
-    vector<int> list;
+    srand((unsigned)time(NULL));
 
-    for(int i=0; i<5; i++) list.push_back(i);
+    // Criando um vetor (por meio da classe vector) de valores do tipo int:
+    vector<int> list;
+    // Um elemento qualquer do vetor pode ser acessado por índice mas há outros modos de acessá-lo.
+
+    // Função push back adiciona item ao vetor:
+    for(int i=0; i<5; i++) list.push_back(rand()%10);
 
     cout << "Imprimindo o vetor do começo ao final" << endl;
-
 
     for(auto v = list.begin(); v != list.end(); v++){
     // O tipo "auto" aceita qualquer tipo que a variável receba (é dado na inicialização da variável);
