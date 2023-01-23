@@ -14,6 +14,7 @@ int main(){
 
 
     return 0;
+    // O retorno de 0 é opcional mas significa que tudo ocorreu bem.
 }
 
 // mais informações sobre "cout" em: https://www.quora.com/Is-cout-an-object-or-a-function-Why

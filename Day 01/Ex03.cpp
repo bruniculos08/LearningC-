@@ -1,7 +1,7 @@
 // Classes
 #include <iostream>
 
-class rectangle{
+class Rectangle{
     public:
         void init(float height, float width);
         float getArea();
@@ -12,18 +12,18 @@ class rectangle{
 
 // Para definir os métodos da classe (já declarados na definição da classe) deve-se como prefixo o nome da classe...
 // ...(seguido de "::" obviamente):
-void rectangle::init(float height, float width){
+void Rectangle::init(float height, float width){
     (*this).height = height;
     (*this).width = width;
 }
 // (*this) é como o "self" em outras linguagens de programação orientadas a objeto porém só é necessário caso...
 // ... haja conflito no nome de variáveis (entre as do argumento do método e as da classe).
 
-float rectangle::getArea(){
+float Rectangle::getArea(){
     return height * width;
 }
 
-bool rectangle::isSquare(){
+bool Rectangle::isSquare(){
     if(height == width) return true;
     else return false;
 }
@@ -31,14 +31,11 @@ bool rectangle::isSquare(){
 int main(){
 
     // Criando um objeto da classe rectangle:
-    rectangle my_rectangle;
+    Rectangle my_rectangle;
     float hi, wi;
 
-    std::cout << "Insira um tamanho:" << std::endl;
-    std::cin >> hi;
-
-    std::cout << "Insira uma largura:" << std::endl;
-    std::cin >> wi;
+    std::cout << "Insira um altura e uma largura:" << std::endl;
+    std::cin >> hi >> wi;
 
     my_rectangle.init(hi, wi);
     // Para acessar qualquer método ou atributo de uma classe basta se usar o ponto seguido do item que...
