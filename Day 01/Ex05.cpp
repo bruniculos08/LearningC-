@@ -1,6 +1,7 @@
 // Classes amigas
 #include <iostream>
 
+// Declarações para o que é usado antes de ser definido:
 class Square;
 class Rectangle;
 void grow(Rectangle *r, float percentage);
