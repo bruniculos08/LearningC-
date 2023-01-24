@@ -31,3 +31,16 @@ int main(){
 
     return 0;
 }
+
+
+/*
+The complexity (efficiency) of common operations on vectors is as follows:
+(1) Random access - constant O(1)
+(2) Insertion or removal of elements at the end - amortized constant O(1)
+(3) Insertion or removal of elements - linear in the distance to the end of the vector O(n)
+
+Algumas respostas:
+(1) https://stackoverflow.com/questions/15079057/arrays-vs-vectors-introductory-similarities-and-differences
+(2) https://en.cppreference.com/w/cpp/container/vector
+
+*/
