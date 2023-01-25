@@ -31,7 +31,7 @@ Respostas para algumas dúvidas frequentes:
 (2) https://stackoverflow.com/questions/14513535/warning-deleting-array-in-load-file-function
 (3) https://stackoverflow.com/questions/20397360/adding-int-to-address-causes-int-to-be-added-4-times
 
-Obs.: sim, quando um inteiro é adicionado a um endereço ele é adicionado 4 vezes (x*sizeof(x)); mais sobre no...
-... link 3.
+Obs.: sim, quando um inteiro é adicionado a um endereço ele é adicionado 4 vezes (x*sizeof(x), pois um inteiro ocupa...
+... 4 bytes de memória); mais sobre isso no link 3.
 
 */
