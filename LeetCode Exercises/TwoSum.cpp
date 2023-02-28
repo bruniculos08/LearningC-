@@ -1,41 +1,51 @@
 #include <iostream>
 #include <vector>
+#include <map>
+#include <unordered_map>
 #include <time.h>
 #include<algorithm>
 #include <bits/stdc++.h>
 
 class Solution;
+class BetterSolution;
+
+using namespace std;
+
+class BetterSolution {
+    public:
+        vector<int> twoSum(vector<int>& nums, int target) {
+            unordered_map<int, int> auxStruct;
+            for(int i = 0   ; i < nums.size(); i++) {
+                if(auxStruct.find(nums[i]) == auxStruct.end()) auxStruct[nums[i]] = i; 
+                int rest = target - nums[i];
+                if(auxStruct.find(rest) != auxStruct.end() and auxStruct[rest] != i){
+                    if(i <= auxStruct[rest]) return {i, auxStruct[rest]};
+                    else return {auxStruct[rest], i};
+                }
+            }
+            return {-1, -1};
+        }
+};
 
 class Solution {
     public:
-    
-        std::vector<int> findTwo(std::vector<int>& nums, int value1, int value2) {
-            int n1 = -1, n2 = -1;
-            for(int i=0; i < nums.size() and (n1 == -1 and n2 == -1); i++){
-                if(nums[i] == value1) n1 = i;
-                if(nums[i] == value2) n2 = i;
+        vector<int> twoSum(vector<int>& nums, int target) {
+            vector<int> rest;
+            for(int i = 0; i < nums.size()-1; i++){
+                for(int j = i+1; j < nums.size(); j++) {
+                    if(nums[i] + nums[j] == target){
+                        return {i, j};
+                    }
+                }
             }
-            return {n1, n2};
+            return {-1, -1};
         }
-
-        std::vector<int> twoSum(std::vector<int>& nums, int target) {
-            std::vector<int> sortedNums = nums;
-            std::sort(nums.begin(), nums.end());
-            int n1 = 0;
-            int n2 = nums.size() - 1;
-            for(int i=0; i <= nums.size(); i++) {
-                if(nums[n1] + nums[n2] < target) n1++;
-                else if(nums[n1] + nums[n2] > target) n2--;
-                else return Solution::findTwo{nums, nums[n1], [n2]};
-            }
-            return {-1};
-    }
 };
 
 int main() {
-    std::vector<int> myNums{3,2,4};
+    std::vector<int> myNums{3, 3};
     int target = 6;
-    Solution solver;
+    BetterSolution solver;
     std::vector<int> solutionNums = solver.twoSum(myNums, target);  
     for(int x : solutionNums){
         std::cout << x << " ";
